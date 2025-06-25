@@ -37,7 +37,7 @@ class ParkingLotTest {
     @Test
     void testParkVehicle() {
         assertTrue(parkingLot.parkVehicle(smallVehicle));
-        assertFalse(slots.get(0).isAvailable());
+        assertFalse(slots.get(0).isEmpty());
         assertEquals(smallVehicle, slots.get(0).getParkedVehicle());
     }
 
@@ -47,9 +47,9 @@ class ParkingLotTest {
         assertTrue(parkingLot.parkVehicle(largeVehicle));
         assertTrue(parkingLot.parkVehicle(oversizeVehicle));
 
-        assertFalse(slots.get(0).isAvailable());
-        assertFalse(slots.get(1).isAvailable());
-        assertFalse(slots.get(2).isAvailable());
+        assertFalse(slots.get(0).isEmpty());
+        assertFalse(slots.get(1).isEmpty());
+        assertFalse(slots.get(2).isEmpty());
     }
 
     @Test
